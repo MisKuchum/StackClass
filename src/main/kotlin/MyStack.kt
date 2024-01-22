@@ -1,35 +1,23 @@
 class MyStack<T>(
     rawItems: Collection<T> = listOf(),
 ) {
-
     // Список элементов стека
-    private var items: MutableList<T>
-
-    //Индекс последнего элемента стека
-    private var top: Int = -1
-
-    // Инициализирующий блок
-    init {
-        items = rawItems.toMutableList()
-        top = items.size - 1
-    }
+    private var items: MutableList<T> = rawItems.toMutableList()
 
     // Извлекает последний элемент
-    fun pop(): T {
-        val res = items[top]
-        items.removeAt(top)
-        top--
+    fun pop(): T? {
+        val res = items.lastOrNull() ?: return null
+        items.removeAt(items.size - 1)
         return res
     }
 
     // Добавить элемент
     fun push(element: T) {
         items.add(element)
-        top++
     }
 
     // Возвращает последний элемент
-    fun peek(): T = items[top]
+    fun peek(): T? = items.lastOrNull()
 
     // Проверка на пустой стек
     fun isEmpty(): Boolean = items.isEmpty()
