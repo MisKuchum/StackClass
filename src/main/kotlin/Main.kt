@@ -1,6 +1,6 @@
 fun main() {
     // Инициализация стека целых чисел
-    val intStack = MyStack(listOf(1, 2, 3, 4))
+    val intStack = MyStackV2(listOf(1, 2, 3, 4))
     println("Стек целых чисел: ${intStack.toString()}\n")
 
     // Извлечение последнего элемента
@@ -19,7 +19,7 @@ fun main() {
     println("intStack.isEmpty() = ${intStack.isEmpty()}\n")
 
     // Инициализация пустого стека
-    val emptyStack = MyStack<Int>()
+    val emptyStack = MyStackV2<Int>()
     println("emptyStack: ${emptyStack.toString()}\n")
 
     // Проверка на пустой стек
